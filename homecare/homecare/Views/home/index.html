@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomeHut Care</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords">
+  <link rel="shortcut icon" href="/Web/home/images/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/Web/home/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/Web/home/css/homepage.css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+
+        <div style="float: right; margin-right: 100px;">
+          <?php if(!empty($_SESSION['flag'])) {
+          echo "<a href='?c=User&a=Logout'><b>Logout</b></a>";
+          }
+          else{
+          ?>
+          <a href="?c=User&a=Register"><b>Register</b></a>
+          |
+          <a href="?c=User&a=Login"><b>Login</b></a>
+          <?php }?>
+        </div>
+
+        <div class="container">
+
+          <div class="col-md-12">
+
+            <div class="navbar-header">
+              <img src="Web/home/images/Logo.png" alt="" style="width: 80px;"><span
+                style="font-size: large;font-weight:bold;color: black;">HomeHut</span>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul type="none">
+                <li class=""><a href="#banner"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li class=""><a href="#about"><i class="fa fa-fw fa-info"></i> About</a></li>
+                <li class=""><a href="#provide"><i class="fa fa-fw fa-gears"></i>Treatment</a></li>
+                <li class=""><a href="#contact"><i class="fa fa-fw fa-phone"></i>Contact</a></li>
+
+                <div class="dropdown">
+                  <button class="dropbtn"><a href="#provide"><span style="color: #007244;">Services </span>
+                      <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <?php foreach($cates as $cate){?>
+                    <a href="?cid=<?php echo $cate['cate_id'];?>">
+                      <?php echo $cate['cate_name'];?>
+                      <?php }?>
+                    </a>
+                  </div>
+                </div>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="banner-info">
+              <div class="banner-text text-left">
+                <h1>Malaysia HomeHut Care</h1>
+                <p>
+                  At HomeCare, we understand that home is where the heart is <br>
+                  we are dedicated to bringing compassionate
+                  <br>and professional care to your doorstep.
+                </p>
+              </div>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#about"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="banner-img">
+            <img src="Web/home/images/indexbg.jpg" alt="Image by Lifestylememory on Freepik">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!--/ banner-->
+  <!--service-->
+
+  <!--cta-->
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">ABOUT HomeHut </h2>
+            <hr class="botm-line">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3Y5sO2REU2o?si=Py9Qjr69o61Y8OZz"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>Compassionate Care in the Comfort of Your Home</h3>
+                <p> At HomeHut Care, we believe in the power of personalized care.
+                  <br> Each individual is unique, and we tailor our services to meet your specific needs.
+                  <br> Whether you require assistance with daily activities, companionship,
+                  <br> or specialized medical care,we are here to support you every step of the way.
+                </p>
+              </div>
+              <div class="more-features-box-text">
+                <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+                <div class="more-features-box-text-description">
+                  <h3>Our Mission</h3>
+                  <P>
+                    Our mission at HomeHut Care is to enhance the quality of life
+                    <br> for individuals by providing compassionate and professional home care services.
+                    <br> We strive to create a warm and supportive environment
+                    <br> where you can feel safe, comfortable, and empowered.
+                  </P>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--/ about-->
+
+
+  <section id="provide" class="section-padding" style="background-color:#FFF6F4;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <h2 class="ser-title">We provide</h2>
+          <hr class="botm-line">
+          <p>HomeHut Care is committed to providing Malaysian people with an easy-to-use homecare website to make
+            appointments, consultations and view their information.</p>
+          <p>The site exists to provide a system for delivering medical services directly to patients' homes, ensuring
+            that no one is left without essential medical care.</p>
+          <p>You can click services for help.</p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-stethoscope"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Regular Health Assessment</h4>
+              <p>Our healthcare professionals conduct regular assessments to monitor your overall health,
+                manage chronic conditions, and address any emerging health concerns. </p>
+            </div>
+          </div>
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-user-md"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Rehabilitation services</h4>
+              <p>HomeHut Care's rehabilitation team consists of experienced physical therapists, occupational
+                therapists,
+                and other rehabilitation specialists. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-ambulance"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Drug management</h4>
+              <p>Drug management services encompass medication assessment and organization.
+                We collaborate with healthcare professionals to create a comprehensive medication plan tailored to your
+                specific needs.</p>
+            </div>
+          </div>
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-medkit"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Home care</h4>
+              <p>Our team members are carefully selected, trained, whether you require short-term assistance or
+                long-term support,
+                and dedicated to providing the highest standard of care. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ service-->
+  <!--cta-->
+  <section id="cta-1" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="schedule-tab">
+          <div class="col-md-4 col-sm-4 bor-left">
+            <div class="mt-boxy-color"></div>
+            <div class="medi-info">
+              <h3>Emergency Case</h3>
+              <p>If have any emergency case can just walk in to the clinic as soon as possible. This clinic providing
+                services till 12am everyday. </p>
+
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="medi-info">
+              <h3>Feedback patient</h3>
+              <p>We get many good feedback from patient who visited the clinic . All the feedback are good and amazing.
+              </p>
+
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 mt-boxy-3">
+            <div class="mt-boxy-color"></div>
+            <div class="time-info">
+              <h3>Opening Hours</h3>
+
+              <p>Monday - Friday : 9.00 AM - 12.00 AM<br>
+
+                Saturday & Sunday : 10.00 AM - 12.00 AM</P>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--cta-->
+  <!-- contact -->
+  <div>
+    <?php include VIEW_PATH . 'contact.html'; ?>
+  </div>
+ 
+  <!-- contact -->
+  <!--footer-->
+<div>
+  <?php include VIEW_PATH . 'footer.html'; ?>
+</div>
+
+
+  <!--/ footer-->
+
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Backend Management</title>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/common.css"/>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/main.css"/>
+  <script type="text/javascript" src="Web/back/js/libs/modernizr.min.js"></script>
+  <script type="text/javascript" src="Web/back/js/jquery1.42.min.js"></script>
+</head>
+<body>
+
+<?php include VIEW_PATH . 'top.html';?>
+
+
+<div class="container clearfix">
+
+  <?php include VIEW_PATH . 'left_menu.html';?>
+
+  <div class="main-wrap">
+
+    <div class="crumb-wrap">
+      <div class="crumb-list"><i class="icon-font"></i>
+        <a href="?p=back">Index</a>
+        <span class="crumb-step">&gt;</span>
+        <span class="crumb-name">Patient files</span>
+        <span class="crumb-step">&gt;</span>
+        <span class="crumb-name">Add</span>
+      </div>
+    </div>
+    <div class="result-wrap">
+      <div class="result-content">
+        <form action="?p=back&c=Index&a=savePatientFiles" method="post" id="myform"
+              enctype='multipart/form-data'
+        >
+          <table class="insert-tab" width="100%">
+            <tbody>
+            <tr>
+              <th><i class="require-red">*</i>Category：</th>
+              <td>
+                <select name="type">
+                  <option value="">Select</option>
+                  <?php foreach(ReservationModel::TYPE as $k=>$v){ ?>
+                  <option value='<?php echo $k;?>'>
+                  <?php echo $v;?>
+                  </option>
+                  <?php } ?>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th><i class="require-red">*</i>User：</th>
+              <td>
+
+                <select name="user_id">
+                  <option value="">Select</option>
+                  <?php foreach($disease as $k=>$v){ ?>
+                  <option value='<?php echo $v['user_id'];?>'>
+                    <?php echo $v['user_name'];?>
+                  </option>
+                  <?php } ?>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th><i class="require-red">*</i>Doctor</th>
+              <td>
+                <select name="doctor_id">
+                  <option value="">Select</option>
+                  <?php foreach($doctor as $k=>$v){ ?>
+                  <option value='<?php echo $v['user_id'];?>'>
+                  <?php echo $v['user_name'];?>
+                  </option>
+                  <?php } ?>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th><i class="require-red"></i>Doctor's advice：</th>
+              <td>
+                <textarea name="doctor_content" class="common-textarea" cols="100" rows="20"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <input class="btn btn-primary btn6 mr10" value="Submit" type="submit">
+                <input class="btn btn6" onclick="history.go(-1)" value="Back" type="button">
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HOME CARE</title>
+  <link rel="shortcut icon" href="Web/home/images/Logo.ico" type="image/x-icon">
+  <link href="Web/home/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="Web/home/css/admin_login.css" rel="stylesheet" type="text/css" />
+  <script>
+    function checkForm(frm){
+      var pwd_text = frm.user_pass.value; //Get the value of the password
+      //Let’s do a test first
+      var str1 = 'abc'; //How to get the encoding of the first character of this string?
+      var code = str1.charCodeAt(0);  //
+      //alert(code);    //The result is 97
+      //Check the ASCII table and get the code of "A" as 65 and the code of "a" as 97
+      //The encoding of "0"-"9" is: 48-57
+      var len = pwd_text.length;
+      if(len < 6){
+        alert("密码不符合要求");
+        return false;
+      }
+      for(var i = 0; i < len; i++){
+        code = pwd_text.charCodeAt(i);
+        if(code < 48 || code > 57){
+          alert("密码不符合要求");
+          return false;
+        }
+      }
+
+      return true;
+    }
+    function checkForm2(frm){
+      var name_text = document.getElementById('user').value;
+      //Requirements: only letters, numbers and underscores, and numbers cannot begin, and the length is 4-16
+      var ptn1 = /^[a-z_]\w{3,15}$/i;
+      //Explanation: The first one is one of a-z (case-insensitive) and underscore (_)
+       //Then, followed by 3-15 "word characters"
+      if(!ptn1.test(name_text)){
+        alert("The username does not meet the requirements!");
+        return false;
+      }
+
+
+      var pwd_text = frm.user_pass.value; //Get the value of the password item
+      var pattern = /^\d{6,10}$/;   
+      if(!pattern.test(pwd_text)){
+        alert("The password does not meet the requirements!");
+        return false;
+      }
+
+      var email_text = document.getElementById('mail').value;
+      var email_ptn = /^\w+@\w+(\.\w+)+$/;
+      if(!email_ptn.test(email_text)){
+        alert("The email address does not meet the requirements!");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body class='bg_test'>
+<div class="admin_login_wrap">
+  <div class="wz_text">
+    <a href="./"><strong style="color: black;">Home</strong></a>&gt;
+    <strong>Register</strong>
+  
+  <div class="adming_login_border">
+    <div class="admin_input">
+      <form action="?c=User&a=RegSave" method="post" onsubmit="return checkForm2(this)">
+        <ul class="admin_items">
+          <li>
+            <label for="user">User Name：</label>
+            <input type="text" name="user_name" value="" id="user" size="34" class="admin_input_style" />
+            Requirement: Only letters, numbers, and underscores are allowed, and numbers cannot start with a length of 4-16
+          </li>
+          <li>
+            <label for="pwd">Password：</label>
+            <input type="password" name="user_pass" value="" id="pwd" size="34" class="admin_input_style" /> Requirement: Only numbers with 6 or more digits are allowed
+          </li>
+          <li>
+            <label for="pwd">Email：</label>
+            <input type="text" name="user_mail" value="" id="mail" size="34" class="admin_input_style" />
+          </li>
+          <li>
+            <label for="pwd">Phone：</label>
+            <input type="text" name="phone" value="" id="phone" size="34" class="admin_input_style" />
+          </li>
+          <li>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+          </li>
+          <li>
+            Already have an account?？<a href="?c=User&a=Login">Login now</a>
+          </li>
+        
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>HOME CARE</title>
+  <meta name="keywords" content="HOME CARE" />
+  <meta name="description" content="" />
+  <link rel="shortcut icon" href="Web/home/images/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="Web/home/css/index.css"/>
+  <link rel="stylesheet" href="Web/home/css/style.css"/>
+  <script type="text/javascript" src="Web/home/js/jquery1.42.min.js"></script>
+  <script type="text/javascript" src="Web/home/js/jquery.SuperSlide.2.1.1.js"></script>
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<?php include VIEW_PATH . 'header.html'; ?>
+
+<!--content start-->
+<div id="content"; style="margin: 200px auto auto 450px;">
+  <!--left-->
+  <div class="left" id="news" ; style="background-color: bisque;">
+    <div class="weizi"; style="background-color:azure">
+      <div class="wz_text">current location：
+        <a href="./">Home</a>
+<!--        <a href="?cid=<?php echo $blog['cate_id'];?>"><?php echo $blog['cate_name'];?></a>-->
+        &gt;
+        <span>Reservation</span>
+      </div>
+    </div>
+    <div class="news_content">
+
+
+      <div class="news_top">
+        <h1>Reservation</h1>
+        <p>
+          <span class="left fl">Time:<?php echo date('Y-m-d H:i:s');?></span>
+          <span class="left fl">Role：people</span>
+          <span class="left author"><?php echo $_SESSION['user'];?></span>
+        </p>
+        <div class="clear"></div>
+      </div>
+
+
+      <form action='?c=Index&a=reservation' method="post" onsubmit="return checkFormR(this)">
+        <div style="margin: 10px">
+
+          <label>Reservation Type：</label>
+          <select name="type">
+          <option value="1">Medical examination</option>
+          <option value="2">Catheter care</option>
+          <option value="3">Blood test</option>
+          <option value="4">COVID-19 detection</option>
+          <option value="5">Vaccination</option>
+          <option value="5">others</option>
+        </select>
+        </div>
+        <div style="margin: 10px">
+          <label>Reservation Content:</label>
+          <textarea name="reservation_content" rows="10" style="width:70%"></textarea>
+        </div>
+        <div style="margin: 10px">
+          <label>Payment method:</label>
+          <select name="pay_type">
+            <option value="1">Card</option>
+            <option value="2">Cash</option>
+
+          </select>
+        </div>
+        <div style="margin: 10px">
+          <label>Amount:</label>
+          <input name="amount" type="text" value="" />
+        </div>
+        <div style="margin: 10px">
+         <p> <input type="submit" value="Reservation submit" /> </p>
+        </div>
+        <br />
+
+      </form>
+
+    </div>
+  </div>
+  <!--left end-->
+
+
+
+
+  <div class="clear"></div>
+</div>
+<!--content end-->
+
+
+
+
+<script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+<script  type="text/javascript" src="js/nav.js"></script>
+</body>
+</html>
+
+<script>
+  function checkFormR(frm){
+    var amount = frm.amount.value;
+    if (amount<0) {
+      alert("The amount must be greater than 0!");
+      return false;
+    }
+  }
+</script>

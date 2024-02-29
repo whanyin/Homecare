@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Backend management</title>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/common.css"/>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/main.css"/>
+  <script type="text/javascript" src="Web/back/js/libs/modernizr.min.js"></script>
+  <script type="text/javascript" src="web/home/js/jquery1.42.min.js"></script>
+  <script >
+    {literal}
+    $(function(){
+      $("#nowtime").css({color:'red'});
+      $("#host").html(location.host);
+      //alert(location.host);
+      window.setInterval('ShowTime()',1000);
+    });
+    function ShowTime(){
+      var t = new Date();
+      var str = t.getFullYear() + 'Year';
+      str += t.getMonth()+1 + 'Month';
+      str += t.getDate() + 'Day ';
+      str += t.getHours() + ':';
+      str += t.getMinutes() + ':';
+      str += t.getSeconds() + '';
+      $("#nowtime").html(str);
+      document.getElementById("nowtime").innerHTML = str;
+    }
+    // {/literal}
+  </script>
+</head>
+<body>
+<?php include VIEW_PATH . 'top.html'; ?>
+
+
+<div class="container clearfix">
+
+  <?php include VIEW_PATH . 'left_menu.html'; ?>
+
+
+
+  <div class="main-wrap">
+    <div class="crumb-wrap">
+      <div class="crumb-list">
+        <i class="icon-font">&#xe06b;</i>
+        <span>Welcome to the backend management system。</span>
+      </div>
+    </div>
+    <div class="result-wrap">
+      <div class="result-title">
+        Personal Information
+      </div>
+      <div class="result-content">
+        <ul class="sys-info-list">
+          <li>
+            <label class="res-lab">User Name</label><span class="res-info"><?php echo $_SESSION['user_name'];?></span>
+          </li>
+          <li>
+            <label class="res-lab">User Email</label><span class="res-info"><?php echo $_SESSION['user_mail'];?></span>
+          </li>
+          <li>
+            <label class="res-lab">Phone</label><span class="res-info"><?php echo $_SESSION['phone'];?></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+
+</body>
+</html>

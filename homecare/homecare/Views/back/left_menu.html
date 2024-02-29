@@ -1,0 +1,32 @@
+<div class="sidebar-wrap">
+  <div class="sidebar-title">
+    <h1>Menu</h1>
+  </div>
+  <div class="sidebar-content">
+    <ul class="sidebar-list">
+      <li>
+        <a href="#"><i class="icon-font">&#xe003;</i>Common operation</a>
+        <ul class="sub-menu">
+          <?php if($_SESSION['flag'] == 1){?>
+          <li><a href="?p=back&c=index&a=index"><i class="icon-font">&#xe005;</i>Personal Information</a></li>
+          <li><a href="?p=back&c=consultation&a=ShowList"><i class="icon-font">&#xe005;</i>Consultation</a></li>
+          <li><a href="?p=back&c=reservation&a=ShowList"><i class="icon-font">&#xe005;</i>Reservation</a></li>
+          <li><a href="?p=back&c=index&a=addPatientFiles"><i class="icon-font">&#xe005;</i>Add Patient files</a></li>
+          <li><a href="?p=back&c=index&a=getPatientFiles"><i class="icon-font">&#xe005;</i>Patient files List</a></li>
+          <li><a href="?p=back&c=index&a=getDoctor"><i class="icon-font">&#xe005;</i>Doctor List</a></li>
+
+          <?php }else ?>
+          <?php if($_SESSION['flag'] == 3){?>
+          <li><a href="?p=back&c=index&a=index"><i class="icon-font">&#xe005;</i>Personal Information</a></li>
+          <li><a href="?p=back&c=consultation&a=ShowList&doctor_id=<?php echo $_SESSION['flag']?>"><i class="icon-font">&#xe005;</i>Consultation</a></li>
+          <li><a href="?p=back&c=reservation&a=ShowList"><i class="icon-font">&#xe005;</i>Reservation</a></li>
+          <li><a href="?p=back&c=reservation&a=withdrawal"><i class="icon-font">&#xe005;</i>Withdrawal amount</a></li>
+          <?php } ?>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+    

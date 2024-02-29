@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Backend management</title>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/common.css"/>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/main.css"/>
+  <script type="text/javascript" src="Web/back/js/libs/modernizr.min.js"></script>
+  <script type="text/javascript" src="Web/back/js/jquery1.42.min.js"></script>
+  <script >
+  </script>
+</head>
+<body>
+
+<?php include VIEW_PATH . 'top.html'; ?>
+
+<div class="container clearfix">
+
+  <?php include VIEW_PATH . 'left_menu.html'; ?>
+
+
+  <div class="main-wrap">
+
+    <div class="crumb-wrap">
+      <div class="crumb-list"><i class="icon-font"></i>
+        <a href="?p=back">Index</a>
+        <span class="crumb-step">&gt;</span>
+        <span class="crumb-name">consultation</span>
+        <span class="crumb-step">&gt;</span>
+        <span class="crumb-name">Assign a doctor</span>
+      </div>
+    </div>
+    <div class="result-wrap">
+      <div class="result-content">
+        <form action="?p=back&c=consultation&a=Update" method="post" id="myform" >
+          <table class="insert-tab" width="100%">
+            <tbody>
+
+            <tr>
+
+              <th><i class="require-red">*</i>Doctor：</th>
+              <td>
+
+                <select name="doctor_id" id="s_type">
+                  <?php if($_SESSION['flag'] == 3) {?>
+
+                  <option value="<?php echo $_SESSION['user_id'];?>" checked><?php echo $_SESSION['user_name'];?></option>
+                  <?php }else{?>
+                  <?php foreach($doctor as $k=>$v){?>
+                  <option value="<?php echo $k;?>"><?php echo $v;?></option>
+                  <?php }?>
+                  <?php }?>
+                </select>
+
+              </td>
+            </tr>
+
+            <tr>
+              <th>Answer：</th>
+              <td>
+                <textarea name="doctor_answer" class="common-textarea" cols="60" rows="4"><?php echo $data['doctor_answer'];?></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <input type="hidden" value="<?php echo $id;?>" name="id"  />
+                <input class="btn btn-primary btn6 mr10" value="Submit" type="submit">
+                <input class="btn btn6" onclick="history.go(-1)" value="Back" type="button">
+              </td>
+            </tr>
+            </tbody></table>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  
+</div>
+
+</body>
+</html>

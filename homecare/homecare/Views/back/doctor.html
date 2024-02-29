@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Backend management</title>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/common.css"/>
+  <link rel="stylesheet" type="text/css" href="Web/back/css/main.css"/>
+  <script type="text/javascript" src="Web/back/js/libs/modernizr.min.js"></script>
+  <script type="text/javascript" src="Web/back/js/jquery1.42.min.js"></script>
+  <script>
+    function check() {
+      var v = window.confirm('Are you sure you want to delete it？');
+      return v;
+    }
+  </script>
+</head>
+<body>
+
+<?php include VIEW_PATH . 'top.html'; ?>
+
+<div class="container clearfix">
+
+  <?php include VIEW_PATH . 'left_menu.html'; ?>
+
+  
+  <div class="main-wrap">
+
+    <div class="crumb-wrap">
+      <div class="crumb-list"><i class="icon-font"></i>
+        <a href="?p=back">Index</a>
+        <span class="crumb-step">&gt;</span>
+        <span class="crumb-name">Doctor</span>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <div class="search-content">
+
+      </div>
+    </div>
+    <div class="result-wrap">
+      <form name="myform" id="myform" method="post">
+        <div class="result-title">
+          <div class="result-list">
+            <!--            <a href="?p=back&c=Cate&a=Add"><i class="icon-font"></i>添加分类</a>-->
+            <!--            <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>-->
+          </div>
+        </div>
+        <div class="result-content">
+          <table class="result-tab" width="100%">
+            <tr>
+
+              <th>ID</th>
+              <th>Doctor Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Capacity</th>
+              <th>Operate</th>
+            </tr>
+
+            <?php
+                        foreach($data as $v){
+                        ?>
+            <tr>
+
+              <td><?php echo $v['user_id'];?></td>
+              <td><?php echo $v['user_name'];?></td>
+              <td><?php echo $v['user_mail'];?></td>
+              <td><?php echo $v['phone'];?></td>
+              <td><?php echo UserModel::STATUS[$v['status']]??'Unknown';?></td>
+              <td><?php echo UserModel::CAPACITY[$v['capacity']]??'Unknown';?></td>
+
+              <td>
+                <a class="link-update"
+                   href="?p=back&c=index&a=editUser&id=<?php echo $v["user_id"];?>">Edit</a>
+              </td>
+            </tr>
+            <?php } ?>
+
+          </table>
+          <div class="list-page"><?php echo '';?></div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
