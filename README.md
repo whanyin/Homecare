@@ -1,1 +1,7 @@
-👋 Hi, I’m @whanyin 👀 I’m interested in any IT technoloies 🌱 I’m currently learning Java,Mysql,Redis,Mq,and so on 💞️ I’m looking for a internship 📫 email: why376075228@outlook.com
+## 📊 Netflix Movies and TV Shows – Key Dataset Fields
+
+| Field Name     | Data Type | Description                                                                 |
+|----------------|-----------|-----------------------------------------------------------------------------|
+| type           | String    | Specifies whether the title is a Movie or a TV Show.                        |
+| country        | String    | Country of origin for the content.                                          |
+| release_year   | Integer   | Year in which the content was originally released._
