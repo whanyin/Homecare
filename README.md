@@ -1,8 +1,10 @@
-| Field Name       | Data Type | Description                                         |
-|------------------|-----------|-----------------------------------------------------|
-| track_name       | String    | The title of the song.                              |
-| artist(s)_name   | String    | The name of the artist(s).                       |
-| artist_count     | Integer   | Total number of artists contributing to the track.  |
-| released_year    | Integer   | Year the song was released.                         |
-| released_month   | Integer   | Month the song was released.                        |
-| released_day     | Integer   | Day the song was released.                          |
+| Field Name             | Data Type | Description                                                  |
+|------------------------|-----------|--------------------------------------------------------------|
+| streams                | Integer   | Total number of Spotify streams.                             |
+| in_spotify_playlists   | Integer   | Number of Spotify playlists featuring the song.              |
+| in_spotify_charts      | String    | Chart ranking or presence on Spotify.                        |
+| in_apple_playlists     | Integer   | Number of Apple Music playlists the song is included in.     |
+| in_apple_charts        | String    | Chart ranking or presence on Apple Music.                    |
+| in_deezer_playlists    | Integer   | Number of Deezer playlists the song is included in.          |
+| in_deezer_charts       | String    | Chart ranking or presence on Deezer.                         |
+| in_shazam_charts       | String    | Chart ranking or presence on Shazam.                         |
