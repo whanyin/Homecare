@@ -1,26 +1,16 @@
-| Field Name             | Data Type | Description                                                                 |
-|------------------------|-----------|-----------------------------------------------------------------------------|
-| track_name             | String    | Name of the song.                                                           |
-| artist(s)_name         | String    | Name(s) of the artist(s) who performed the song.                            |
-| artist_count           | Integer   | Number of artists contributing to the song.                                 |
-| released_year          | Integer   | Year the song was released.                                                 |
-| released_month         | Integer   | Month the song was released.                                                |
-| released_day           | Integer   | Day of the month the song was released.                                     |
-| in_spotify_playlists   | Integer   | Number of Spotify playlists that include the song.                          |
-| in_spotify_charts      | String    | Presence and rank of the song on Spotify charts.                            |
-| streams                | Integer   | Total number of streams on Spotify.                                         |
-| in_apple_playlists     | Integer   | Number of Apple Music playlists the song is included in.                    |
-| in_apple_charts        | String    | Chart presence and ranking on Apple Music.                                  |
-| in_deezer_playlists    | Integer   | Number of Deezer playlists the song is included in.                         |
-| in_deezer_charts       | String    | Chart presence and ranking on Deezer.                                       |
-| in_shazam_charts       | String    | Chart presence and ranking on Shazam.                                       |
-| bpm                    | Integer   | Beats per minute, measuring the tempo of the song.                          |
-| key                    | String    | Musical key of the song.                                                    |
-| mode                   | String    | Mode of the song (e.g., major or minor).                                    |
-| danceability_%         | Float     | Percentage indicating how suitable the song is for dancing.                 |
-| valence_%              | Float     | Musical positivity expressed by the song.                                   |
-| energy_%               | Float     | Perceived intensity and activity level of the song.                         |
-| acousticness_%         | Float     | Extent to which the track is acoustic.                                      |
-| instrumentalness_%     | Float     | Amount of instrumental content in the song.                                 |
-| liveness_%             | Float     | Presence of a live performance element.                                     |
-| speechiness_%          | Float     | Degree of spoken words in the track.     
+| Field Name            | Data Type | Description                                                                 |
+|-----------------------|-----------|-----------------------------------------------------------------------------|
+| track_name            | String    | Name of the song.                                                           |
+| artist(s)_name        | String    | Name(s) of the artist(s) who performed the song.                            |
+| artist_count          | Integer   | Number of contributing artists for the song.                                |
+| released_year         | Integer   | The year the song was released.                                             |
+| in_spotify_playlists  | Integer   | Number of Spotify playlists that include the song.                          |
+| streams               | Integer   | Total number of streams on Spotify – a key measure of popularity.           |
+| bpm                   | Integer   | Beats per minute – indicates the tempo of the song.                         |
+| danceability_%        | Float     | Measures how suitable the song is for dancing (0–100%).                     |
+| valence_%             | Float     | Reflects the musical positivity or mood of the song (0–100%).               |
+| energy_%              | Float     | Represents the intensity and activity level of the song (0–100%).           |
+| acousticness_%        | Float     | Degree to which the song is acoustic in nature (0–100%).                    |
+| instrumentalness_%    | Float     | Proportion of the song that is instrumental (0–100%).                       |
+| speechiness_%         | Float     | Proportion of spoken words in the song (0–100%).                            |
+| liveness_%            | Float     | Likelihood that the song was performed live (0–100%).                       |
