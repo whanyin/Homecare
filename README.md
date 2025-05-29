@@ -1,7 +1,7 @@
 | Field Name            | Data Type | Description                                                                 |
 |-----------------------|-----------|-----------------------------------------------------------------------------|
 | track_name            | String    | Name of the song.                                                           |
-| artist(s)_name        | String    | Name(s) of the artist(s) who performed the song.                            |
+| artist(s)_name        | String    | Name of the artist(s) who performed the song.                            |
 | artist_count          | Integer   | Number of contributing artists for the song.                                |
 | released_year         | Integer   | The year the song was released.                                             |
 | in_spotify_playlists  | Integer   | Number of Spotify playlists that include the song.                          |
